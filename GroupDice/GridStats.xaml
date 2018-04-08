@@ -1,0 +1,41 @@
+﻿<Window x:Class="GroupDice.GridStats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GroupDice"
+        mc:Ignorable="d"
+        Title="Grid Stats" Height="312.676" Width="300">
+    <Grid>
+
+        <Button x:Name="str_int" Content="Roll" HorizontalAlignment="Left" Margin="73,40,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="dex_int" Content="Roll" HorizontalAlignment="Left" Margin="117,40,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="con_int" Content="Roll" HorizontalAlignment="Left" Margin="161,40,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="str_wis" Content="Roll" HorizontalAlignment="Left" Margin="73,60,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="dex_wis" Content="Roll" HorizontalAlignment="Left" Margin="117,60,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="con_wis" Content="Roll" HorizontalAlignment="Left" Margin="161,60,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="str_cha" Content="Roll" HorizontalAlignment="Left" Margin="73,80,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="dex_cha" Content="Roll" HorizontalAlignment="Left" Margin="117,80,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Button x:Name="con_cha" Content="Roll" HorizontalAlignment="Left" Margin="161,80,0,0" VerticalAlignment="Top" Width="44" Click="Roll_Click"/>
+        <Label x:Name="strLabel" Content="STR" HorizontalAlignment="Left" Margin="73,14,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="dexLabel" Content="DEX" HorizontalAlignment="Left" Margin="117,14,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="conLabel" Content="CON" HorizontalAlignment="Left" Margin="161,14,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="intLabel" Content="INT" HorizontalAlignment="Left" Margin="40,36,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="wisLabel" Content="WIS" HorizontalAlignment="Left" Margin="40,54,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="chaLabel" Content="CHA" HorizontalAlignment="Left" Margin="39,74,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="strValueLabel" Content="STR" HorizontalAlignment="Left" Margin="73,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="dexValueLabel" Content="DEX" HorizontalAlignment="Left" Margin="73,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="conValueLabel" Content="CON" HorizontalAlignment="Left" Margin="73,165,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="intValueLabel" Content="INT" HorizontalAlignment="Left" Margin="73,189,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="wisValueLabel" Content="WIS" HorizontalAlignment="Left" Margin="73,211,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="chaValueLabel" Content="CHA" HorizontalAlignment="Left" Margin="73,232,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="strValue" HorizontalAlignment="Left" Height="23" Margin="117,123,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="strValue_MouseDown"/>
+        <TextBox x:Name="dexValue" HorizontalAlignment="Left" Height="23" Margin="117,146,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="dexValue_MouseDown"/>
+        <TextBox x:Name="conValue" HorizontalAlignment="Left" Height="23" Margin="117,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="conValue_MouseDown"/>
+        <TextBox x:Name="intValue" HorizontalAlignment="Left" Height="23" Margin="117,192,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="intValue_MouseDown"/>
+        <TextBox x:Name="wisValue" HorizontalAlignment="Left" Height="23" Margin="117,215,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="wisValue_MouseDown"/>
+        <TextBox x:Name="chaValue" HorizontalAlignment="Left" Height="23" Margin="117,236,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="44" PreviewMouseUp="chaValue_MouseDown"/>
+        
+    </Grid>
+</Window>
