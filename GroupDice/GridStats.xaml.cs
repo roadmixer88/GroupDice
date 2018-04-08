@@ -39,7 +39,7 @@ namespace GroupDice
             Button b = (Button)sender;
             if (b.Content.GetType() == typeof(string) && (string)b.Content == "Roll")
             {
-                b.Content = ""+ mainWindow.getRoll();
+                b.Content = ""+ mainWindow.getRollStatValue();
                 b.IsEnabled = false;
             } else
             {

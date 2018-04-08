@@ -52,26 +52,7 @@ namespace GroupDice
 
             Button sender = (Button)sendingObject;
             sender.IsEnabled = false;
-            List<Stat> stats;
-            switch (rollMode)
-            {
-                case RollMode.FourDSixDropLowest:
-                    stats = get4d6DLStats();
-                    break;
-                case RollMode.Random:
-                    stats = getRandomStats();
-                    break;
-                case RollMode.ThreeDSixStraight:
-                    stats = get3d6Stats();
-                    break;
-                case RollMode.FourDSixFlat:
-                    stats = get4d6FlatStats();
-                    break;
-                default:
-                    stats = getRandomStats();
-                    break;
-            }
-
+            List<Stat> stats = RollStats();
 
             if (sender.Name.Contains("group1"))
             {
@@ -286,6 +267,14 @@ namespace GroupDice
             } else if (sender.Name == "popItem")
             {
                 ResetItesms();
+            } else if (sender.Name == "gridItem")
+            {
+                GridStats gridStats = new GridStats(this);
+                gridStats.Show();
+            } else if (sender.Name == "rollerItem")
+            {
+                ExpressionRoller expressionRoller = new ExpressionRoller(this);
+                expressionRoller.Show();
             }
         }
 
@@ -312,11 +301,10 @@ namespace GroupDice
 
         private void gridItem_Click(object sender, RoutedEventArgs e)
         {
-            GridStats gridStats = new GridStats(this);
-            gridStats.Show();
+            
         }
 
-        public int getRoll()
+        public int getRollStatValue()
         {
             switch (rollMode)
             {
@@ -333,6 +321,79 @@ namespace GroupDice
             }
         }
 
+        public List<Stat> RollStats()
+        {
+            switch (rollMode)
+            {
+                case RollMode.FourDSixDropLowest:
+                    return get4d6DLStats();
+                case RollMode.Random:
+                    return getRandomStats();
+                case RollMode.ThreeDSixStraight:
+                    return get3d6Stats();
+                case RollMode.FourDSixFlat:
+                    return get4d6FlatStats();
+                default:
+                    return getRandomStats();
+            }
+        }
+
+        public int RollDice(string expression)
+        {
+            if (!expression.Contains('d') && !expression.Contains('%'))
+            {
+                return 0;
+            }
+            try
+            {
+                string modifier = "";
+                int numDice = 0;
+                int numSides = 0;
+                int mod = 0;
+                if (expression.Contains("+"))
+                {
+                    modifier = "+";
+                    string[] exprFirstParts = expression.Split('+');
+                    Int32.TryParse(exprFirstParts[1], out mod);
+                    string[] exprSecondParts = exprFirstParts[0].Split('d');
+                    Int32.TryParse(exprSecondParts[0], out numDice);
+                    Int32.TryParse(exprSecondParts[1], out numSides);
+                }
+                else if (expression.Contains("-"))
+                {
+                    modifier = "-";
+                    string[] exprFirstParts = expression.Split('+');
+                    Int32.TryParse(exprFirstParts[1], out mod);
+                    string[] exprSecondParts = exprFirstParts[0].Split('d');
+                    Int32.TryParse(exprSecondParts[0], out numDice);
+                    Int32.TryParse(exprSecondParts[1], out numSides);
+                }
+                else if (expression == "%")
+                {
+                    return r.Next(1, 100);
+                } else
+                {
+                    string[] exprSecondParts = expression.Split('d');
+                    Int32.TryParse(exprSecondParts[0], out numDice);
+                    Int32.TryParse(exprSecondParts[1], out numSides);
+                }
+                switch (modifier)
+                {
+                    case "":
+                        return r.Next(1, numSides) * numDice;
+                    case "+":
+                        return r.Next(1, numSides) * numDice + mod;
+                    case "-":
+                        return r.Next(1, numSides) * numDice - mod;
+                    default:
+                        return 0;
+                }
+            } catch (Exception)
+            {
+                return 0;
+            }
+            
+        }
         private int getRandomRoll()
         {
             int roll = r.Next(7, 20);

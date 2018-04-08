@@ -1,0 +1,23 @@
+﻿<Window x:Class="GroupDice.ExpressionRoller"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GroupDice"
+        mc:Ignorable="d"
+        Title="ExpressionRoller" Height="447.284" Width="326.459">
+    <Grid>
+        <TextBox x:Name="expressionInput" HorizontalAlignment="Left" Height="23" Margin="20,19,0,0" TextWrapping="Wrap" Text="Enter Expression" VerticalAlignment="Top" Width="120" KeyDown="expressionInput_KeyDown"/>
+        <Button x:Name="rollButton" Content="Roll" HorizontalAlignment="Left" Margin="145,19,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="181" Margin="22,109,0,0" VerticalAlignment="Top" Width="276">
+            <TextBlock x:Name="resultsBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" IsEnabled="False"/>
+        </ScrollViewer>
+        <Label Content="Results" HorizontalAlignment="Left" Margin="22,78,0,0" VerticalAlignment="Top"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="223,19,0,0" VerticalAlignment="Top" Width="75" Click="Clear_Click"/>
+        <Label Content="Presets" HorizontalAlignment="Left" Margin="22,308,0,0" VerticalAlignment="Top"/>
+        <Button Content="Stats" HorizontalAlignment="Left" Margin="22,348,0,0" VerticalAlignment="Top" Width="75" Click="Stats_Button_Click"/>
+        <Button Content="Percentile" HorizontalAlignment="Left" Margin="102,348,0,0" VerticalAlignment="Top" Width="75" Click="Percent_Button_Click"/>
+        <Button Content="1d20" HorizontalAlignment="Left" Margin="182,348,0,0" VerticalAlignment="Top" Width="75" Click="Mod_D20_Click"/>
+
+    </Grid>
+</Window>
