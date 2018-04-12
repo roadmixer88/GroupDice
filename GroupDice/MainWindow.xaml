@@ -17,20 +17,20 @@
             <ColumnDefinition Width="309*"/>
         </Grid.ColumnDefinitions>
         <Menu Width="Auto" Height="20" Grid.ColumnSpan="2" Margin="0,0,0,97">
-            <MenuItem Header="Method">
+            <MenuItem Header="Tools">
+                <MenuItem x:Name="rollerItem" Header="Expression _Roller" Click="MenuItem_Click" />
+                <MenuItem x:Name="gridItem" Header="_Grid Stats" Click="MenuItem_Click"/>
+                <Separator/>
+                <MenuItem x:Name="popItem" Header="_Pop!" Click="MenuItem_Click" />
+                <Separator />
+                <MenuItem x:Name="closeItem" Header="_Close" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Options" HorizontalAlignment="Right">
                 <MenuItem x:Name="fourD6FlatItem" Header="4d6 Flat" IsChecked="True" IsCheckable="True" Click="MenuItem_Click" ToolTip="4d6 drop the lowest"/>
                 <MenuItem x:Name="fourD6Item" Header="4d6 Reroll" IsChecked="False" IsCheckable="True" Click="MenuItem_Click" ToolTip="4d6 drop lowest, reroll 1s"/>
                 <MenuItem x:Name="threeD6Item" Header="3d6" IsChecked="False" IsCheckable="True" Click="MenuItem_Click" ToolTip="Just unrelenting 3d6"/>
                 <MenuItem x:Name="randItem" Header="Weighted Random" IsChecked="False" IsCheckable="True" Click="MenuItem_Click" ToolTip="Random between 7 and 18 weighted towards the higher end"/>
-                <Separator />
-                <MenuItem x:Name="closeItem" Header="_Close" Click="MenuItem_Click"/>
-            </MenuItem>
-            <MenuItem Header="More Rollers" HorizontalAlignment="Right">
-                <MenuItem x:Name="rollerItem" Header="Expression _Roller" Click="MenuItem_Click" />
-                <MenuItem x:Name="gridItem" Header="_Grid Stats" Click="MenuItem_Click"/>
-                <Separator/>
-
-                <MenuItem x:Name="popItem" Header="_Pop" Click="MenuItem_Click" />
+                
             </MenuItem>
         </Menu>
         <DataGrid x:Name="group1Grid" HorizontalAlignment="Left" Margin="22,66,0,0" VerticalAlignment="Top" Height="134" Width="92" IsReadOnly="True" AlternatingRowBackground="#FFB6B6B6" HeadersVisibility="None" Grid.RowSpan="2" />
