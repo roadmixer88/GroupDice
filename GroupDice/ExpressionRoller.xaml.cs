@@ -25,6 +25,7 @@ namespace GroupDice
         {
             this.mainWindow = Parent;
             InitializeComponent();
+            expressionInput.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
